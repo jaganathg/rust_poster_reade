@@ -1,11 +1,15 @@
 mod ocr;
 mod file_io;
 mod excel;
+#[macro_use]
+mod timer;
 
 use anyhow::{Ok, Result};
 use log::info;
+use std::time::Instant;
 
-fn main() -> Result<()> {
+
+fn poster_reader() -> Result<()> {
     env_logger::init();
 
     let image_folder = "images";
@@ -22,4 +26,8 @@ fn main() -> Result<()> {
     excel::write_to_excel(output_file, &results)?;
     info!("OCR processing completed, Results saved to file {}", output_file);
     Ok(())
+}
+
+fn main() {
+    measure_time!(|| poster_reader());
 }

@@ -4,7 +4,7 @@ cargo-features = ["edition2024"]
 name = "poster_reader"
 version = "0.1.0"
 edition = "2024"
-author = "Jaganath_Gajendran"
+authors = ["Jaganath_Gajendran"]
 
 [dependencies]
 image = "0.25.1"
